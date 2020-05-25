@@ -1,0 +1,14 @@
+<h3>Sign in</h3>
+<form class="ui form" [formGroup]="autrhForm" (ngSubmit)="onSubmit()">
+<app-input inputType="text" label="username" [control]="autrhForm.get('username')"> </app-input>
+<app-input  inputType="password" label="password" [control]="autrhForm.get('password')"></app-input>
+
+<div *ngIf="autrhForm.errors" class="ui red basic label ">
+    <p *ngIf="autrhForm.errors.credentials"> Invalid username or password</p>
+    <!-- <p *ngIf="autrhForm.errors.unknownerror"> check network connectivity</p> -->
+</div>
+    <div>
+        <button type="submit" class="ui submit button primary">Submit</button> 
+    </div>
+  
+</form>
